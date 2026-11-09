@@ -1,0 +1,10 @@
+body,h1,h2,h3,h4,h5,h6{font-family:Roboto,Arial,sans-serif}
+.linkedin-mark{font-family:Arial,sans-serif;font-size:20px;font-weight:700;letter-spacing:-1px}
+.typing-subtitle{display:none!important}
+.typed-subtitle strong{color:#4bffa5}
+.skip-home{position:fixed;top:-100px;left:20px;z-index:12000;background:#4bffa5;color:#101010;padding:10px 15px}.skip-home:focus{top:15px}
+.screen-reader-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+a:focus-visible{outline:2px solid #4bffa5;outline-offset:5px}
+.section.started.personal .started-content .typed-subtitle{max-width:75%;font-size:clamp(40px,5.6vw,90px);white-space:nowrap}
+@media(max-width:720px){.section.started.personal .started-content .typed-subtitle{font-size:20px;max-width:100%;white-space:normal}.home .footer .copy{max-width:calc(100% - 35px)}}
+@media(prefers-reduced-motion:reduce){.video-bg-texture{display:none}.cursor-follower{display:none}.lines .line-col:before,.lines .line-col:after{transition:none!important}}

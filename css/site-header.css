@@ -1,0 +1,13 @@
+/* Shared original-template navigation on every portfolio page. */
+body,h1,h2,h3,h4,h5,h6,.header{font-family:Roboto,Arial,sans-serif}
+.header .top-menu nav{display:block;padding:0;margin:0;width:auto}
+.header .top-menu ul{margin:0}
+.header .top-menu a{letter-spacing:0}
+.header .top-menu ul li>a{padding:0}
+.header .top-menu a[aria-current="page"]:after{display:none}
+.header .logo a{color:inherit}
+body.menu-open{overflow:hidden}
+.header a:focus-visible{outline:2px solid #4bffa5;outline-offset:6px}
+.inner-page .header{background:#101010f5}
+.inner-page main{padding-top:110px}
+@media(max-width:720px){.inner-page main{padding-top:90px}.inner-page .header{top:0;padding-top:30px;padding-bottom:18px}.inner-page .header.active{padding-top:30px}}

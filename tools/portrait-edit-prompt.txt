@@ -1,0 +1,18 @@
+Tool: built-in image_gen (image editing).
+Edit target: images/harish.jpeg
+Style reference: images/man.jpg
+Output: images/harish-dark-background.png
+
+Use case: identity-preserve / background replacement. Edit target: first image,
+Harish's portrait in a black blazer and maroon shirt against a pale wall.
+Second image is ONLY a background and tonal style reference (man.jpg); do not
+adopt that person's face, pose, glasses or clothing. Replace ONLY the first
+portrait's pale wall background with a nearly black charcoal studio background
+matching the softly textured dark background of the second image, with a
+subtle soft vignette. Preserve Harish's identity, facial structure and features,
+expression, hairstyle, facial hair, pose, clothing including maroon shirt and
+lapel pin, framing and image dimensions as closely as possible. Preserve
+natural skin and clothing colors; background should be deep charcoal
+approximately #181818 to #222222 and blend into a website with background
+#101010. Keep realistic clean hair edges; no halo, no extra objects, no text,
+no changes to face or body. Output just the edited portrait.

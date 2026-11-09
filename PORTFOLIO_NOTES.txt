@@ -1,0 +1,58 @@
+Harish V portfolio
+
+Public URL: https://harishksoft.github.io/portfolio/
+Repository: https://github.com/harishksoft/portfolio
+
+Content is based on Harish_V_Technical_Project_Manager_Resume.pdf.
+The resume and original supplied portrait images/harish.jpeg are unchanged.
+The site uses images/harish-dark-background.png for the main portrait.
+
+Public pages
+  index.html          - canonical home at /portfolio/
+  index_personal.html - retained home URL; canonical points to /portfolio/
+  resume.html         - experience, skills, education
+  works.html          - AI automation projects and other software work
+  contacts.html       - contact details and resume download
+
+Editing and rebuilding
+  site_config.json - public URL and repository configuration
+  tools/build_portfolio.py - resume-aligned content and page generation
+  tools/personal_home.html - original home layout
+  tools/site_header.html - shared navigation
+  tools/seo.py - metadata, JSON-LD, sitemap, robots.txt, llms.txt
+  css/layout.css - only the layout rules used by these pages
+  css/portfolio.css, css/personal-home.css, css/site-header.css - page styles
+  js/personal-home.js - shared menu, cursor, grain, and animated text
+
+Run python tools/build_portfolio.py after editing content or the public URL.
+Run python tools/check_seo.py to verify metadata, schemas, canonical URLs,
+local links, sitemap, robots, llms.txt, and absence of author/demo references.
+Run python tools/package_site.py to create dist/ with public files only.
+
+GitHub Pages
+  .github/workflows/pages.yml builds and validates the site, packages dist/,
+  and deploys it when main is pushed. In repository Settings > Pages, select
+  GitHub Actions as the publishing source. Source tools, notes, original photo,
+  and local QA screenshots are excluded from the published artifact.
+  .nojekyll supports plain static hosting as well.
+
+For a project site, /portfolio/robots.txt is included, but crawlers consult
+robots.txt at the origin root (https://harishksoft.github.io/robots.txt).
+A root robots.txt can be added through a harishksoft.github.io repository.
+The project sitemap can also be submitted directly in Google Search Console.
+No custom domain, analytics identifier, or verification token is assumed.
+
+Local preview and QA
+  python -m http.server 8080 --bind 127.0.0.1
+  http://127.0.0.1:8080/index_personal.html
+  python tools/check_portfolio.py (requires Python Playwright and Chromium)
+  Screenshots are written to ignored output/playwright/.
+  Stop the preview with Ctrl+C.
+
+Removed unused alternate pages, demo toolbar and chat scripts, downloaded
+HTML error pages, stock images, icon-font libraries, and unused CSS/JS.
+No third-party runtime scripts, analytics, or tracking embeds remain.
+The browser checks cover all pages at 1440px, 390px, and 320px widths, shared
+menu positions/styles, navigation, mobile menu, Escape, and PDF download.
+SEO checks validate structure and links; search engine indexing or ranking
+is not guaranteed by metadata or structured data.

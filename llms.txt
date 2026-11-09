@@ -1,0 +1,42 @@
+# Harish V - Technical Project Manager
+
+> Software Development & AI Automation. Hands-on Python, PHP, and Next.js development and 10-member team leadership.
+
+Based in Cherpulassery, Palakkad, Kerala, India. 14+ years in software development, with project management experience since 2019.
+
+## Portfolio
+
+- [Home](https://harishksoft.github.io/portfolio/): Profile and professional focus.
+- [Experience & Skills](https://harishksoft.github.io/portfolio/resume.html): Professional experience, skills, and education.
+- [AI & Automation Projects](https://harishksoft.github.io/portfolio/works.html): AI agents, automation tools, and software projects, with roles and results.
+- [Contact](https://harishksoft.github.io/portfolio/contacts.html): Email, telephone, LinkedIn, and resume download.
+- [Technical Project Manager resume](https://harishksoft.github.io/portfolio/Harish_V_Technical_Project_Manager_Resume.pdf): Downloadable PDF supplied by Harish V.
+
+## Supported achievements
+
+- Independently developed an AI sales calling agent using Python, OpenAI APIs, Twilio, and Retell AI; completed 1,000+ calls.
+- Independently developed Amazon SES email automation; sent 100,000+ emails cumulatively.
+- Built a separate bulk email validation tool that reduced campaign spam rate by approximately 80%.
+- Leads a 10-member development team, including client discussions, scope, task allocation, and code reviews.
+
+## Selected projects
+
+- AI Sales Calling Agent (Python / OpenAI APIs / Twilio / Retell AI): Independently developed an AI sales calling agent that completed 1,000+ calls, automating calling work previously handled by a three-person sales calling team.
+- AI Video Chatbot (Python / Next.js / MongoDB): Independently built an AI video chatbot end to end that acts as a company representative and guides users through a Ready for Next (RFN) form.
+- News Scraping (Playwright / OpenAI): Independently built a client news portal tool end to end, collecting news from 64+ providers without APIs or RSS feeds using Playwright and OpenAI.
+- WhatsApp Chatbot & Campaign Tools (Next.js / Python / MySQL / Meta WhatsApp APIs): Built internal WhatsApp chatbot and campaign tools, and set up a separate internal campaign automation tool.
+- Email Automation & Validation (Amazon SES / Multiple SMTP providers): Independently developed email automation with campaign scheduling and sender configuration, sending 100,000+ emails cumulatively. Built a separate bulk email validation tool that reduced campaign spam rate by approximately 80%.
+- Lead Collection Automation (Python / Excel): Independently developed tools that read Excel inputs, collect contact details from websites, and export results to Excel, reducing manual collection work.
+- Schic (WooCommerce / AWS): Independently rebuilt and migrated an ecommerce platform with 1,000+ products and 90,000+ customer records. Built the replacement alongside the live site and switched over in approximately one month. Hosted on AWS with auto scaling.
+- GoPit (PHP / Flutter / Python): Managed Flutter mobile app development by another developer. Independently built the remaining search engine components: the PHP website, Python scraping, search provider APIs, Skyscanner integration, and Leaflet maps.
+- LeaseLark (Next.js / PHP / Python / MySQL): Managed the project end to end, covering client interaction, requirements gathering, scope preparation, task allocation, integration, and deployment.
+- Visio Square (PHP / MySQL / Razorpay / FedEx): Independently built a contact lens store end to end, with patient-to-manufacturer ordering, Razorpay payments, and FedEx shipping integration.
+
+## Contact
+
+- [Email](mailto:vharishv@yahoo.com): vharishv@yahoo.com
+- [LinkedIn](https://www.linkedin.com/in/vharishv/): Professional profile.
+
+## Accuracy notes
+
+The 100,000+ email count is cumulative, not monthly. The approximately 80% reduction concerns campaign spam rate through a separate email validation tool. The 14+ years refer to software development, not years in AI. Project descriptions distinguish independent development from project management.
