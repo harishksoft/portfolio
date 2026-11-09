@@ -5,7 +5,7 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'output' / 'playwright'
 OUT.mkdir(parents=True, exist_ok=True)
-PAGES = ['index_personal.html', 'resume.html', 'works.html', 'contacts.html']
+PAGES = ['index.html', 'resume.html', 'works.html', 'contacts.html']
 BASE = 'http://127.0.0.1:8080/'
 
 with sync_playwright() as p:
@@ -18,7 +18,7 @@ with sync_playwright() as p:
         page.set_viewport_size({'width': width, 'height': height})
         for name in PAGES:
             page.goto(BASE + name)
-            if name == 'index_personal.html':
+            if name == 'index.html':
                 page.wait_for_timeout(3500)
             assert page.locator('h1').is_visible()
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), (name, width)
@@ -35,7 +35,7 @@ with sync_playwright() as p:
                 page.screenshot(path=str(OUT / (name.replace('.html', '') + '-' + label + '.png')), full_page=True)
             print(f'{name}: {width}px layout passed')
     page.set_viewport_size({'width': 1440, 'height': 1000})
-    page.goto(BASE + 'index_personal.html')
+    page.goto(BASE + 'index.html')
     page.locator('.top-menu a[href="works.html"]').click()
     page.wait_for_url('**/works.html')
     assert page.url.endswith('works.html')
@@ -56,8 +56,8 @@ with sync_playwright() as p:
     assert toggle.get_attribute('aria-expanded') == 'false'
     toggle.click()
     page.get_by_role('link', name='Home', exact=True).click()
-    page.wait_for_url('**/index_personal.html')
-    assert page.url.endswith('index_personal.html')
+    page.wait_for_url('**/index.html')
+    assert page.url.endswith('index.html')
     assert page.get_by_role('button', name='Menu').get_attribute('aria-expanded') == 'false'
     page.wait_for_timeout(3500)
     toggle = page.get_by_role('button', name='Menu')

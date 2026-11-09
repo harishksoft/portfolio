@@ -51,7 +51,7 @@ def intro(kicker, title, desc):
 
 def site_header(active):
     items = []
-    for key, url, label in [('home','index_personal.html','Home'), ('resume','resume.html','Resume'), ('works','works.html','Projects'), ('contacts','contacts.html','Contact')]:
+    for key, url, label in [('home','index.html','Home'), ('resume','resume.html','Resume'), ('works','works.html','Projects'), ('contacts','contacts.html','Contact')]:
         current = ' aria-current="page"' if active == key else ''
         css_class = 'menu-item current-menu-item' if active == key else 'menu-item'
         items.append(f'<li class="{css_class}"><a href="{url}"{current}>{label}</a></li>')
@@ -77,7 +77,7 @@ def page(active, title, description, body):
   <a class="skip-link" href="#main">Skip to content</a>
   {header}
   <main id="main">{body}</main>
-  <footer class="site-footer"><div><a class="brand" href="index_personal.html">Harish <strong>V.</strong></a><p>Technical Project Manager · Software Development &amp; AI Automation</p></div><div class="footer-links"><a href="mailto:vharishv@yahoo.com">Email <span aria-hidden="true">↗</span></a><a href="tel:+919809158308">Call <span aria-hidden="true">↗</span></a><a href="{LINKEDIN}" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></footer>
+  <footer class="site-footer"><div><a class="brand" href="index.html">Harish <strong>V.</strong></a><p>Technical Project Manager · Software Development &amp; AI Automation</p></div><div class="footer-links"><a href="mailto:vharishv@yahoo.com">Email <span aria-hidden="true">↗</span></a><a href="tel:+919809158308">Call <span aria-hidden="true">↗</span></a><a href="{LINKEDIN}" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></footer>
 </body>
 </html>
 '''
@@ -96,14 +96,12 @@ work = intro('AI agents / Automation / Selected work','AI automation.<br>Selecte
 contact = intro('Contact','AI automation &amp;<br>software delivery.','Contact me about AI calling agents, chatbot and workflow automation, Python, PHP, or Next.js development, and technical project management.') + f'''<section class="content-section contact-layout" aria-label="Contact details"><div class="contact-methods"><a href="mailto:vharishv@yahoo.com"><span class="eyebrow">Email</span><span class="contact-value">vharishv@yahoo.com <span class="accent" aria-hidden="true">↗</span></span></a><a href="tel:+919809158308"><span class="eyebrow">Phone</span><span class="contact-value">+91 9809158308 <span class="accent" aria-hidden="true">↗</span></span></a><a href="{LINKEDIN}" target="_blank" rel="noopener noreferrer"><span class="eyebrow">LinkedIn</span><span class="contact-value">Connect with Harish V <span class="accent" aria-hidden="true">↗</span></span></a></div><aside class="contact-aside"><div class="small-monogram" aria-hidden="true">HV</div><h2>Harish V</h2><p>Technical Project Manager<br>Software Development &amp; AI Automation</p><p>Cherpulassery, Palakkad,<br>Kerala, India</p>{button(PDF,'Download resume',download=True)}</aside></section>'''
 
 for filename, active, title, desc, content in [
-    ('index_personal.html','home','Technical Project Manager & AI Automation','Harish V — Technical Project Manager, Software Development & AI Automation. Python, PHP & Next.js and 10-member team leadership.',home),
+    ('index.html','home','Technical Project Manager & AI Automation','Harish V — Technical Project Manager, Software Development & AI Automation. Python, PHP & Next.js and 10-member team leadership.',home),
     ('resume.html','resume','Experience & Skills','Explore Harish V’s AI automation skills, hands-on software development, project leadership, and education.',experience),
     ('works.html','works','AI & Automation Projects','Explore Harish V’s AI calling agents, chatbots, workflow automation, and software projects.',work),
     ('contacts.html','contacts','Contact','Contact Harish V about AI agents, chatbots, workflow automation, and technical project leadership.',contact),
 ]:
     output = content.replace('{{SITE_HEADER}}', site_header('home')).replace('{{SEO_HEAD}}', seo_head('home', 'Harish V | Technical Project Manager & AI Automation', desc)) if active == 'home' else page(active, title, desc, content)
     (ROOT / filename).write_text(output, encoding='utf-8')
-    if active == 'home':
-        (ROOT / 'index.html').write_text(output, encoding='utf-8')
 write_discovery(automation_projects + projects[:4])
 print('Built portfolio pages, SEO metadata, schemas, sitemap, robots, and llms.txt.')

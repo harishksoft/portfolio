@@ -24,7 +24,7 @@ class Page(HTMLParser):
         if tag == 'script' and self.in_schema:
             self.schemas.append(json.loads(self.schema)); self.in_schema = False
 
-for name, key in [('index.html','home'), ('index_personal.html','home'), ('resume.html','resume'), ('works.html','works'), ('contacts.html','contacts')]:
+for name, key in [('index.html','home'), ('resume.html','resume'), ('works.html','works'), ('contacts.html','contacts')]:
     text = (ROOT / name).read_text(encoding='utf-8')
     page = Page(text)
     assert sum(t == 'title' for t,a in page.tags) == 1, name
@@ -62,11 +62,11 @@ for name, key in [('index.html','home'), ('index_personal.html','home'), ('resum
 tree = ET.parse(ROOT / 'sitemap.xml')
 locations = [node.text for node in tree.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
 assert locations == [url(path) for path in PATHS.values()]
-assert 'index_personal.html' not in (ROOT / 'sitemap.xml').read_text()
+assert 'index.html' not in (ROOT / 'sitemap.xml').read_text()
 assert 'Sitemap: ' + url('sitemap.xml') in (ROOT / 'robots.txt').read_text()
 llms = (ROOT / 'llms.txt').read_text(encoding='utf-8')
 assert llms.startswith('# Harish V') and all(location in llms for location in locations)
-assert (ROOT / 'index.html').read_bytes() == (ROOT / 'index_personal.html').read_bytes()
+assert [path.name for path in ROOT.glob('index*.html')] == ['index.html']
 for folder in ['css','js']:
     for path in (ROOT / folder).rglob('*'):
         if path.is_file():

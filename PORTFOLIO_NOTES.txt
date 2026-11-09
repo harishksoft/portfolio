@@ -9,7 +9,6 @@ The site uses images/harish-dark-background.png for the main portrait.
 
 Public pages
   index.html          - canonical home at /portfolio/
-  index_personal.html - retained home URL; canonical points to /portfolio/
   resume.html         - experience, skills, education
   works.html          - AI automation projects and other software work
   contacts.html       - contact details and resume download
@@ -44,7 +43,7 @@ No custom domain, analytics identifier, or verification token is assumed.
 
 Local preview and QA
   python -m http.server 8080 --bind 127.0.0.1
-  http://127.0.0.1:8080/index_personal.html
+  http://127.0.0.1:8080/index.html
   python tools/check_portfolio.py (requires Python Playwright and Chromium)
   Screenshots are written to ignored output/playwright/.
   Stop the preview with Ctrl+C.
@@ -56,3 +55,13 @@ The browser checks cover all pages at 1440px, 390px, and 320px widths, shared
 menu positions/styles, navigation, mobile menu, Escape, and PDF download.
 SEO checks validate structure and links; search engine indexing or ranking
 is not guaranteed by metadata or structured data.
+
+Publishing status: published successfully on GitHub Pages.
+Live URL: https://harishksoft.github.io/portfolio/
+Repository visibility: public (approved by the user).
+Published source commit: 17cc554218d6a006d36e8c28264b613d7663ebf7
+Successful workflow: https://github.com/harishksoft/portfolio/actions/runs/42605144076
+Build and deployment jobs both succeeded. Live HTTP 200 checks passed for
+Home, Resume, Projects, Contact, sitemap.xml, robots.txt, llms.txt, layout CSS,
+JavaScript, main portrait, and the downloadable resume PDF.
+The publishing checkout is .publish-checkout/.

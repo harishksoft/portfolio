@@ -9,7 +9,7 @@ if DEST.exists():
     shutil.rmtree(DEST)
 DEST.mkdir()
 files = [
-    'index.html', 'index_personal.html', 'resume.html', 'works.html', 'contacts.html',
+    'index.html', 'resume.html', 'works.html', 'contacts.html',
     'sitemap.xml', 'robots.txt', 'llms.txt', '.nojekyll',
     'Harish_V_Technical_Project_Manager_Resume.pdf',
     'css/layout.css', 'css/portfolio.css', 'css/personal-home.css', 'css/site-header.css',
