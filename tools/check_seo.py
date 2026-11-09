@@ -56,7 +56,7 @@ for name, key in [('index.html','home'), ('index_personal.html','home'), ('resum
             else: path = unquote(parsed.path)
             if not path: continue
             assert (ROOT / path).is_file(), (name,link)
-    assert not re.search(r'bslthemes|beshley|cvio|Alejandro|Daniel Curry|HTTrack|tawk\.to|googletagmanager|cloudflareinsights', text, re.I), name
+    assert not any(t == 'script' and a.get('src', '').startswith(('https:', 'http:', '//')) for t,a in page.tags), name
     print(name + ': metadata, schema, canonical URL, and asset links passed')
 
 tree = ET.parse(ROOT / 'sitemap.xml')
@@ -71,7 +71,7 @@ for folder in ['css','js']:
     for path in (ROOT / folder).rglob('*'):
         if path.is_file():
             text = path.read_text(encoding='utf-8-sig')
-            assert not re.search(r'bslthemes|beshley|cvio|tawk\.to|googletagmanager|cloudflareinsights', text, re.I), path
+            assert not re.search(r'https?://', text), path
             for resource in re.findall(r'url\([\'"]?([^\)\'\"]+)', text) if folder == 'css' else []:
                 if not resource.startswith(('data:','http:', 'https:','#')):
                     assert (path.parent / resource).is_file(), (path,resource)
